@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background">
+
+    <ImageView
+        android:layout_width="186dp"
+        android:layout_height="201dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_iconn" />
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="forward_btn.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="progress.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="shield.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/error_layout_fragment_status"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="virus.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="virus_corona.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="workout.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1.25" />
+
+
+        </LinearLayout>
+
+    </ScrollView>-->
+
+
+</RelativeLayout>

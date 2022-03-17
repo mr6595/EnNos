@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/whitesmoke"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/bottombottom"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"/>
+
+
+    <LinearLayout
+        android:id="@+id/toptop"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_above="@+id/bottombottom"
+        android:layout_marginBottom="-69dp"
+        android:background="@drawable/mainoptionlayout"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:id="@+id/apkScanLayout"
+                style="@style/mainitemlayoutbg1"
+                android:elevation="5dp">
+
+                <ImageView
+                    style="@style/itemimagemain"
+                    android:layout_above="@+id/qwg"
+                    android:src="@drawable/ic_apk"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/qwg"
+                    style="@style/itemmaintv"
+                    android:text="Apk" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/customScanLayout"
+                style="@style/mainitemlayoutbg1"
+                android:layout_marginHorizontal="20dp"
+
+                android:elevation="5dp">
+
+                <ImageView
+                    style="@style/itemimagemain"
+                    android:layout_above="@+id/qwt"
+                    android:src="@drawable/ic_android"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/qwt"
+                    style="@style/itemmaintv"
+                    android:text="Custom" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/settingsLayout"
+                style="@style/mainitemlayoutbg1"
+                android:elevation="5dp">
+
+                <ImageView
+                    style="@style/itemimagemain"
+                    android:layout_above="@+id/qwy"
+                    android:src="@drawable/ic_setting"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/qwy"
+                    style="@style/itemmaintv"
+                    android:text="Settings" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/helpLayout"
+                style="@style/mainitemlayoutbg2"
+
+                android:elevation="5dp">
+
+                <ImageView
+                    style="@style/itemimagemain"
+                    android:layout_above="@+id/qwe"
+                    android:src="@drawable/ic_help"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/qwe"
+                    style="@style/itemmaintv"
+                    android:text="Help" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/aboutLayout"
+                style="@style/mainitemlayoutbg2"
+                android:layout_marginHorizontal="20dp"
+
+                android:elevation="5dp">
+
+                <ImageView
+                    style="@style/itemimagemain"
+                    android:layout_above="@+id/qww"
+                    android:src="@drawable/ic_about"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/qww"
+                    style="@style/itemmaintv"
+                    android:text="About" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/shareLayout"
+                style="@style/mainitemlayoutbg2"
+                android:elevation="5dp">
+
+                <ImageView
+                    style="@style/itemimagemain"
+                    android:layout_above="@+id/qw"
+                    android:src="@drawable/ic_share"
+                    app:tint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/qw"
+                    style="@style/itemmaintv"
+                    android:text="Share" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/toptop"
+        android:elevation="10dp"
+        android:layout_marginBottom="-20dp"
+        android:background="@drawable/mainoptionlayout1">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/error_layout_fragment_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/scanNowBtn"
+            android:elevation="10dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="idle_shield.json"
+            app:lottie_loop="true"
+            app:lottie_speed="0.2" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/scanNowBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            app:cardBackgroundColor="@color/app_orange"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:elevation="10dp"
+                android:text="Scan now"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/whitesmoke" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:text="hfjhghjgjh"
+            android:textColor="@color/app_grey"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout><!--<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/app_background"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@color/secondaryTextColor"
+        app:itemTextColor="@color/secondaryTextColor"
+        app:menu="@menu/activity_main_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
+-->

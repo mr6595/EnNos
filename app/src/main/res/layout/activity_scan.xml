@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitesmoke"
+    tools:context="com.moutamid.antimalwareapp.activities.ScanActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        android:layout_above="@id/stopButton"
+        android:background="@drawable/scantoplayout"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/error_layout_fragment_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/idsa"
+            android:layout_marginHorizontal="70dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="shield.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1.0" />
+
+        <LinearLayout
+            android:id="@+id/idsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="-60dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/percentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/percent_start"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:text="@string/scanningApplications"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/whitesmoke" />
+
+            <TextView
+                android:id="@+id/secondaryStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="7dp"
+                android:ellipsize="end"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/whitesmoke"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <pl.bclogic.pulsator4droid.library.PulsatorLayout
+        android:id="@+id/stopButton"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        app:pulse_color="@color/app_orange"
+        app:pulse_count="5"
+        app:pulse_duration="7000"
+        app:pulse_interpolator="Linear"
+        app:pulse_repeat="0"
+        app:pulse_startFromScratch="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="STOP"
+            android:textColor="@color/whitesmoke"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </pl.bclogic.pulsator4droid.library.PulsatorLayout>
+
+    <LinearLayout
+        android:id="@+id/scanningView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/progressView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/progressBgColor"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:scaleY="6" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:background="@drawable/roundstopbutton"
+        android:text="@string/stop"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:visibility="gone" />-->
+</RelativeLayout>

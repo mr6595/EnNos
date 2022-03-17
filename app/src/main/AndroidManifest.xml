@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.moutamid.antimalwareapp">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission-sdk-23 android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name=".utils.AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="q">
+        <activity
+            android:name=".activities.virustotal.VirusTotalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/scan_now"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/settings_title"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moutamid.antimalwareapp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.HelpActivity"
+            android:label="@string/help_title"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moutamid.antimalwareapp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ScanActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activities.ResultActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moutamid.antimalwareapp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AppDetails"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".onboard.OnBoardingActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CustomScanActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme" />
+
+        <receiver
+            android:name=".receiver.AppListener"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.BootCompletedReceiver"
+            android:directBootAware="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.RealTimeService"
+            android:enabled="true" />
+    </application>
+
+</manifest>
